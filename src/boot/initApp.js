@@ -2,17 +2,23 @@ import React from 'react';
 import { Root } from 'native-base';
 import { createStackNavigator, createDrawerNavigator } from 'react-navigation';
 
+import Register from '../screens/signin-signup/register';
+import SignIn from '../screens/signin-signup/signin';
 import MainTime from '../screens/main-time';
-import Settings from '../screens/settings';
+import Clock from '../screens/clock-watch';
+import GWmap from '../screens/gmap';
 
 const AppNavigator = createStackNavigator(
     {
+		RegisterStack: { screen: Register },
+		SignInStack: { screen: SignIn },
 		MainTimeStack: { screen: MainTime },
-		SettingsStack: { screen: Settings }
+		ClockStack: { screen: Clock },
+		GmapWeatherStack: { screen: GWmap }
     },
     {
-		initialRouteName: 'MainTimeStack',
-		headerMode: 'none',
+		initialRouteName: 'SignInStack',
+		// headerMode: 'none',
 		title: 'App_Main_Nav'
     }
 );

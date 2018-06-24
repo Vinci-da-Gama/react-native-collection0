@@ -3,8 +3,9 @@
 	"version": "0.1.0",
 	"private": true,
 	"devDependencies": {
+		"eslint": "^4.19.1",
 		"jest-expo": "~27.0.0",
-		"react-native-scripts": "1.14.0",
+		"react-native-scripts": "^1.14.1",
 		"react-test-renderer": "16.3.1"
 	},
 	"main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
@@ -23,11 +24,16 @@
 		"link": "^0.1.5",
 		"minutes-seconds-milliseconds": "^1.0.3",
 		"moment": "^2.22.1",
-		"native-base": "^2.4.5",
+		"native-base": "^2.5.2",
+		"parse": "^1.11.1",
+		"parse-react": "^0.5.2",
 		"react": "16.3.1",
-		"react-native": "~0.55.2",
+		"react-dom": "^16.4.1",
+		"react-native": "^0.55.4",
+		"react-native-elements": "^0.19.1",
+		"react-native-maps": "^0.21.0",
 		"react-native-vector-icons": "^4.6.0",
-		"react-navigation": "^2.1.0",
-		"request": "^2.85.0"
+		"react-native-web": "^0.8.4",
+		"react-navigation": "^2.1.0"
 	}
 }

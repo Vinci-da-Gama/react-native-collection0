@@ -1,6 +1,6 @@
 import moment, { weekdays } from 'moment';
 import 'moment/min/moment-with-locales';
-import { Container, Header, Title, Content, Button, Footer, FooterTab, Left, Right, Body, Icon, Text } from 'native-base';
+import { Container, Content, Button, Footer, FooterTab, Icon, Text, Header, Title } from 'native-base';
 
 import React, { Component } from 'react';
 import { StyleSheet } from 'react-native';
@@ -16,27 +16,46 @@ export class MainTime extends Component {
                         Complete Tutorial -- later drawer navigation
                     </Title>
                 </Header>
-				<Text style={styles.textStyle}>
-					MainTime&nbsp;&nbsp;&nbsp;
-                    <Icon name="ios-book" style={styles.iconStyle} />
-        		</Text>
-				<Text>
-					WeekDays:
-        		</Text>
-				{this.SevenDays()}
-				<Text>
-					Today is: {moment().format('dddd')}
-				</Text>
-                {/* <Button title="Go Settings..." onPress={() => navigate('SettingsStack')} /> */}
-                <Button full onPress={() => navigate('SettingsStack')}>
-                    <Text>
-                        Go Settings...
-                    </Text>
-                </Button>
+				<Content>
+					<Text style={styles.textStyle}>
+						MainTime&nbsp;&nbsp;&nbsp;
+						<Icon name="ios-book" style={styles.iconStyle} />
+					</Text>
+					<Text>
+						WeekDays:
+					</Text>
+					{this.SevenDays()}
+					<Text>
+						Today is: {moment().format('dddd')}
+					</Text>
+				</Content>
+				<Footer>
+					<FooterTab>
+						<Button onPress={() => navigate('ClockStack')}>
+							<Text>
+								Set_Time
+							</Text>
+						</Button>
+						<Button info onPress={() => navigate('GmapWeatherStack')}>
+							<Text>
+								GMap_N_Weather
+							</Text>
+						</Button>
+						<Button warning onPress={() => navigate('SignInStack')}>
+							<Text>
+								Sign_In
+							</Text>
+						</Button>
+						<Button danger onPress={() => navigate('RegisterStack')}>
+							<Text>
+								Register
+							</Text>
+						</Button>
+					</FooterTab>
+				</Footer>
 			</Container>
 		);
 	};
-
 	SevenDays() {
 		const WeekDays = [];
 		for (let i = 1; i <= 7; i++) {
@@ -68,7 +87,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontWeight: '600',
         color: 'orange'
-    }
+	}
 });
 
 export default MainTime;
