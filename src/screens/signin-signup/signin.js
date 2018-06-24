@@ -49,27 +49,35 @@ export default class SignIn extends Component {
 								}}
 							/>
 						</Item>
-						<Button primary onPress={ this.onSignIn.bind(this) }>
-							<Text>
-								Sign_In
-							</Text>
-						</Button>
+						<RsBtn bt={'Sign_In'} onBtnPress={this.onSignIn.bind(this)} />
 					</Form>
+					<Button bordered rounded onPress={() => navigate('RegisterStack')}>
+						<Icon name='cog' />
+						<Text>
+							Go Register
+						</Text>
+					</Button>
 				</Content>
                 <FooterToMain navi={ navigate } />
 			</Container>
 		)
 	};
-	onSignIn() {
-		console.log('64 -- getin...', this.state.username, this.state.password);
-		// username: tester0, passwored: abd123
+	onSignIn = () => {
+		const { navigate } = this.props.navigation;
+		// username: tester0, passwored: abc123
 		Parse.User.logIn(this.state.username, this.state.password, {
-			success: function(user) {
+			success: (user) => {
 				// Do stuff after successful login, like a redirect.
-				console.log('69 -- ', user);
+				console.log('71 -- ', user);
+				this.setState({
+					username: '',
+					password: '',
+					errorMsg: ''
+				});
+				navigate('WelcomeStack');
 			},
-			error: function(errData, error) {
-				console.log("72 -- The login failed with error: " + error.code + " " + error.message);
+			error: (errData, error) => {
+				console.error("80 -- The login failed with error: " + error.code + " " + error.message);
 			}
 		});
 	}

@@ -7,7 +7,7 @@ export default class RsBtn extends Component {
 		return (
 			<Button style={rsbtnStyle.btn} onPress={this.props.onBtnPress}>
 				<Text style={rsbtnStyle.btnText}>
-					{this.props.btntext}
+					{this.props.bt}
 				</Text>
 			</Button>
 		)
